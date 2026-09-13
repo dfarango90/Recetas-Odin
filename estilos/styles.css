@@ -1,10 +1,48 @@
-*{
-    color: rgb(1, 1, 1);
+/* Estilos generales de la página */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #2c3e50;
+}
+
+.hero {
+    margin-bottom: 40px;
     text-align: center;
 }
-#h1{
-    color: black;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 22px;
+
+/* AQUÍ APLICAMOS FLEXBOX */
+.menu-container {
+    display: flex;                /* Activa Flexbox */
+    flex-wrap: wrap;              /* Permite que bajen de línea si no caben */
+    gap: 20px;                    /* Espacio de separación entre las tarjetas */
+    justify-content: center;      /* Centra las tarjetas en la pantalla */
+}
+
+/* Estilo para convertir cada enlace en una "tarjeta" moderna */
+.card {
+    background-color: #ffffff;
+    color: #2c3e50;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 200px;
+    text-align: center;
     font-weight: bold;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+/* Efecto al pasar el mouse por encima */
+.card:hover {
+    transform: translateY(-5px);  /* Eleva un poco la tarjeta */
+    background-color: #eef2f7;
+    color: #2980b9;
 }
