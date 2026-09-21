@@ -1,49 +1,100 @@
-/* Estilos generales de la página */
+/* =========================================
+   RESETEO BÁSICO
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f4f9;
     color: #333;
-    max-width: 900px;
-    margin: 0 auto;
+    
+    /* 1. FLEXBOX EN EL BODY: 
+       Centramos todo el contenido en medio de la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     padding: 20px;
-    text-align: center;
 }
 
-h1, h2 {
-    color: #2c3e50;
-}
-
-.hero {
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-/* AQUÍ APLICAMOS FLEXBOX */
-.menu-container {
-    display: flex;                /* Activa Flexbox */
-    flex-wrap: wrap;              /* Permite que bajen de línea si no caben */
-    gap: 20px;                    /* Espacio de separación entre las tarjetas */
-    justify-content: center;      /* Centra las tarjetas en la pantalla */
-}
-
-/* Estilo para convertir cada enlace en una "tarjeta" moderna */
-.card {
+/* =========================================
+   CONTENEDOR PRINCIPAL
+   ========================================= */
+.contenedor-principal {
     background-color: #ffffff;
-    color: #2c3e50;
-    text-decoration: none;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    width: 200px;
-    text-align: center;
-    font-weight: bold;
-    transition: transform 0.2s, background-color 0.2s;
+    max-width: 800px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgb(22, 22, 22);
+    
+    /* 2. FLEXBOX EN EL CONTENEDOR: 
+       Organizamos la cabecera, el menú y el texto en una columna (uno debajo del otro) */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente */
+    gap: 30px; /* Espacio automático entre las secciones */
 }
 
-/* Efecto al pasar el mouse por encima */
-.card:hover {
-    transform: translateY(-5px);  /* Eleva un poco la tarjeta */
-    background-color: #eef2f7;
-    color: #2980b9;
+/* =========================================
+   CABECERA
+   ========================================= */
+.cabecera h1 {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    text-align: center;
+    border-bottom: 3px solid #e67e22;
+    padding-bottom: 10px;
+}
+
+/* =========================================
+   MENÚ DE NAVEGACIÓN (FLEXBOX)
+   ========================================= */
+.menu-recetas {
+    width: 100%;
+    
+    /* 3. FLEXBOX EN EL MENÚ: 
+       Organiza los botones en una fila y los distribuye equitativamente */
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    flex-wrap: wrap; /* Si la pantalla es pequeña, los botones bajan a la siguiente línea */
+    gap: 15px; /* Espacio entre los botones */
+}
+
+.menu-recetas a {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #e67e22;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.menu-recetas a:hover {
+    background-color: #d35400;
+    transform: translateY(-3px); /* Pequeño efecto de elevación al pasar el mouse */
+}
+
+/* =========================================
+   CONTENIDO PRINCIPAL (TEXTOS)
+   ========================================= */
+.contenido-texto {
+    
+    /* 4. FLEXBOX EN EL TEXTO:
+       Separamos los párrafos de manera uniforme */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+    line-height: 1.7;
+    font-size: 1.05rem;
+    color: #4a4a4a;
+    text-align: justify;
 }
